@@ -16,7 +16,9 @@ module SlackBotManager
       if message =~ site_by_word
         word = site_by_word.match(message)[1]
         url = Status.findurl(word)
-        send_message(Status.isitdown(url), channel: data['channel'], icon_emoji: ":ok:")
+        if (url)
+          send_message(Status.isitdown(url), channel: data['channel'], icon_emoji: ":ok:")
+        end
       end
 
       if message =~ site_by_link
