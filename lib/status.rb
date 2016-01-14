@@ -13,7 +13,7 @@ class Status
 	def self.isitdown(url) # e.g. google.com
 		uri = URI('http://downforeveryoneorjustme.com/' + url)
 		output = Net::HTTP.get(uri)
-		if output =~ /It's just you/
+		if output =~ /It's just you/i
 			if url == 'encrypted.google.com'
 				return "google.com is up :ok_hand:"
 			else
