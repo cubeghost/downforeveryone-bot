@@ -12,7 +12,7 @@ module SlackBotManager
 
       site_by_word = /is (\w{2,}) (?:down|up)/
       site_by_url = /is (\w{2,}\.\w{1,}) (?:down|up)/
-      site_by_link = /is <https?:\/\/[a-zA-Z\.]+\|(\w{2,}\.\w\w{1,})> (?:down|up)/
+      site_by_link = /is <https?:\/\/[a-zA-Z\.]+\|((?:www.)\w{2,}\.\w\w{1,})> (?:down|up)/
 
       if message =~ site_by_word
         word = site_by_word.match(message)[1]
